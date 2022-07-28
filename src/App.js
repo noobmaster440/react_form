@@ -1,10 +1,8 @@
 import './App.css';
 import NameForm from './components/NameForm';
-import { Names } from './components/Names';
-import {Name} from './components/Name'
+import Name from './components/Name';
 import { useState } from 'react';
 function App() {
-
   const [Names,setNames]=useState([])
 
   const addName=(Name)=>{
@@ -27,7 +25,7 @@ function App() {
       <br></br>
 
       <NameForm addName={addName}/>
-      <Names Names={Names}/>
+      <Name Names={Names}/>
     </div>
   );
 }
