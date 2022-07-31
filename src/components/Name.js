@@ -1,11 +1,15 @@
 import React from 'react'
-const Name =({Names})=> {
+const Name =({Persons})=> {
   return (
     <div>
-        {Names.map((Name,id)=>(
-            <h3>{Name.Name}</h3>
+        {Persons.map((Person,id)=>(
+            <div>
+              <h2>{Person.Name}</h2>
+              <h3>{Person.Email}</h3>
+              <h4>{Person.Phone}</h4>
+            </div>
         ))}
-        {console.log(Names)}
+        {console.log(Persons)}
     </div>
   )
 }
