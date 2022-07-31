@@ -7,6 +7,7 @@ const Name =({Persons})=> {
               <h2>{Person.Name}</h2>
               <h3>{Person.Email}</h3>
               <h4>{Person.Phone}</h4>
+              <h4>{Person.Gender}</h4>
             </div>
         ))}
         {console.log(Persons)}
