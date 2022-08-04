@@ -1,10 +1,27 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 .App {
   text-align: center;
 }
-
+.control{
+  width: 50%;
+}
+.field{
+ text-align: left;
+ align-self: left;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+form{
+  margin-left: 0.8cm;
+}
+.message{
+  width: 50%;
+  margin-left: 8cm;
+  margin-top: 2cm;
+
+  justify-content: center;
 }
 
 @media (prefers-reduced-motion: no-preference) {
