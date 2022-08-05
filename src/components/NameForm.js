@@ -1,6 +1,6 @@
 import { useState } from "react"
 import '../App.css';
-
+import PhoneInput from "react-phone-number-input/input";
 const NameForm =({addPerson})=> {
     const [Name, setName] = useState('')
     const [Email, setEmail] = useState('')
@@ -69,7 +69,12 @@ const NameForm =({addPerson})=> {
         <div class="field">
           <label class="label">Phone</label>
           <div class="control">
-            <input class="input" type="tel"  value={Phone} onChange={(event)=>setPhone(event.target.value)} placeholder="000-000-0000"></input>
+            {/* <input class="input" type="tel" value={Phone} onChange={(event)=>setPhone(event.target.value)} placeholder="000-000-0000"></input> */}
+            <PhoneInput
+              class="input"
+              country="US"
+              value={Phone}
+              onChange={setPhone} />
           </div>
         </div>
 
