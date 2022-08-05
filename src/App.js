@@ -12,10 +12,12 @@ function App() {
   }
 
   return (
+    <>
     <div className="App">
       <NameForm addPerson={addPerson}/>
       <Name Persons={Persons}/>
     </div>
+    </>
   );
 }
 
