@@ -69,11 +69,11 @@ const NameForm =({addPerson})=> {
         <div class="field">
           <label class="label">Phone</label>
           <div class="control">
-            {/* <input class="input" type="tel" value={Phone} onChange={(event)=>setPhone(event.target.value)} placeholder="000-000-0000"></input> */}
             <PhoneInput
               class="input"
               country="US"
               value={Phone}
+              placeholder="000-000-0000"
               onChange={setPhone} />
           </div>
         </div>
