@@ -1,16 +1,14 @@
 import { useState } from "react"
 import '../App.css';
+
 const NameForm =({addPerson})=> {
     const [Name, setName] = useState('')
     const [Email, setEmail] = useState('')
     const [Password, setPassword] = useState('')
     const [Phone, setPhone] = useState('')
     const [Gender, setGender] = useState('')
-    const [Agree, setAgree] = useState('')
+    const [Agree, setAgree] = useState(false)
     const [Reason, setReason] = useState('')
-
-
-
 
     const handleSubmit=(event)=>{
       event.preventDefault();
@@ -18,19 +16,26 @@ const NameForm =({addPerson})=> {
           alert('Enter all the fields');
           return
       }
-      if(!Agree){
+      if(Agree==false){
         alert('You have to agree to the terms and conditions')
         return
       }
       addPerson({Name,Email,Password,Phone,Gender})
+      console.log(document.getElementById("wer"))
+      document.getElementById("wer").checked="false"
       setName('')
       setEmail('')
       setPassword('')
       setPhone('')
-      setGender('')
       setReason('')
+      // setGender('')
+      console.log(Agree)
+      // setAgree(false)
+      console.log(Agree)
 
     }
+
+
     return (
       <div className="">
         <p className="card-header-title title is-4">
@@ -79,7 +84,7 @@ const NameForm =({addPerson})=> {
         <div class="field" onChange={(event)=>setGender(event.target.value)}>
         <label class="label">Gender</label>
           <div class="control">
-            <label class="radio">
+            <label class="radio" id="wer">
               <input type="radio" name="gender" value="male"></input>
               Male
             </label>
@@ -93,11 +98,21 @@ const NameForm =({addPerson})=> {
             </label>
           </div>
         </div>
-    
+{/* 
+        <div class="control" onChange={(event)=>setGender(event.target.value)} >
+          Gender
+          <input type="radio" id="male" name="gender" value="male"></input>
+          <label for="male">Male</label><br></br>
+          <input type="radio" id="female" name="gender" value="female"></input>
+          <label for="female">Female</label><br></br>
+          <input type="radio" id="other" name="gender" value="other"></input>
+          <label for="other">Other</label><br></br>
+        </div>
+     */}
         <div class="field">
           <div class="control">
             <label class="checkbox">
-              <input type="checkbox" className="checkbox" value={Agree}  onChange={(event)=>setAgree(true)}></input>
+              <input type="checkbox" className="checkbox" value={Agree}  onChange={(event)=>{setAgree(!Agree) }}></input>
                 I agree to the <a href="#">terms and conditions</a>
             </label>
           </div>
@@ -108,4 +123,5 @@ const NameForm =({addPerson})=> {
       </div>
     );
   }
+
 export default NameForm
